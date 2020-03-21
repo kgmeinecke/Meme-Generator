@@ -21,9 +21,59 @@ let topText = document.querySelector("#topText");
 // bottomeText input query selector
 let bottomText = document.querySelector("#bottomText");
 
+let divs = document.querySelectorAll("#main");
+
 // ===========================
 //         Listeners
 // ===========================
+for (let div of divs) {
+  div.addEventListener("mouseover", function(e) {
+    console.dir("in target 1 - " + e.target);
+    if (e.target.childElementCount !== 0) {
+      console.log("in target 2 - " + e.target);
+      e.target.children[3].classList.remove("hidden");
+      e.target.children[3].classList.add("display");
+    }
+  });
+}
+
+// for (let div of divs) {
+//   div.addEventListener("mouseover", function(e) {
+//     let targetImg = document.querySelector('.testing');
+//     if (e.target.childElementCount !== 0) {
+//       console.log("in target 2 - " + e.target);
+//       e.target.children[3].classList.remove("hidden");
+//       e.target.children[3].classList.add("display");
+//     }
+//   });
+// }
+
+for (let div of divs) {
+  div.addEventListener("mouseout", function(e) {
+    let targetDiv = document.querySelector(".display");
+    if (
+      e.target !== null &&
+      e.target.childElementCount === 0 &&
+      targetDiv !== null
+    ) {
+      targetDiv.classList.remove("display");
+      targetDiv.classList.add("hidden");
+    }
+  });
+}
+
+// remove memes
+for (let div of divs) {
+  div.addEventListener("click", function(e) {
+    if (e.target.parentElement.parentElement.childElementCount === 2) {
+      e.target.parentElement.remove();
+      console.log("case 1");
+    } else {
+      e.target.parentElement.parentElement.remove();
+      console.log("case 2");
+    }
+  });
+}
 
 // Add Meme button
 addMemeForm.addEventListener("submit", function(e) {
@@ -34,14 +84,12 @@ addMemeForm.addEventListener("submit", function(e) {
   if (mainDiv.childElementCount === 0) {
     row = createRowDiv();
     mainDiv.append(row);
-    console.log("case 0");
   }
 
   // create meme
   if (row.id === currentRowID.toString() && row.childElementCount < 2) {
     // create meme function call
     createMeme();
-    console.log("case 1");
 
     // create new row and meme
   } else {
@@ -49,12 +97,10 @@ addMemeForm.addEventListener("submit", function(e) {
     row = createRowDiv();
     mainDiv.append(row);
     createMeme();
-    console.log("case 2");
   }
 
   //reset form
   addMemeForm.reset();
-  console.log("added image");
 });
 
 // ===========================
@@ -70,6 +116,7 @@ function createMeme() {
   let newImage = createImg();
   // giv img bootstrap class
   newImage.classList.add("img-thumbnail");
+  newImage.classList.add("testing");
   // create url string
   let url = urlInput.value;
   // add url to src
@@ -102,7 +149,7 @@ function createMeme() {
   let hiddenText = "Click to Remove Meme";
   // append hiddenText to hiddenDiv
   hiddenDiv.innerText = hiddenText;
-  // give hiddenDiv a class
+  // give hiddenDiv  2 classes
   hiddenDiv.classList.add("img-thumbnail");
   hiddenDiv.classList.add("hidden");
   //append hiddenDiv to newDiv
