@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meme Generator</title>
+
+    <!-- ============================ -->
+    <!--          bootstrap           -->
+    <!-- ============================ -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <!-- ============================ -->
+    <!--         Google Fonts         -->
+    <!-- ============================ -->
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ============================ -->
+    <!--         Font Awesome         -->
+    <!-- ============================ -->
+
+    <script
+      src="https://kit.fontawesome.com/689e8d5962.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- ============================ -->
+    <!--         Custom CSS           -->
+    <!-- ============================ -->
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <!-- ============================ -->
+    <!--          Jumbotron           -->
+    <!-- ============================ -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4 text-center">Meme Generator</h1>
+        <p class="lead text-center">
+          Fill out the form to start creating memes!
+        </p>
+        <hr class="my-4" />
+        <form id="form" action="">
+          <div class="d-flex flex-column">
+            <div class="d-flex justify-content-between mb-2">
+              <strong
+                ><i class="fas fa-camera-retro"></i
+                ><label for="urlInput">Image URL</label></strong
+              >
+              <input
+                id="urlInput"
+                class="input pl-2 "
+                type="text"
+                name=""
+                placeholder="Whats the URL for your meme image?"
+              />
+            </div>
+            <div class="d-flex justify-content-between mt-2 mb-2">
+              <strong
+                ><i class="far fa-hand-point-up"></i
+                ><label for="topText">Text on Top</label></strong
+              >
+              <input
+                id="topText"
+                class="input pl-2 "
+                type="text"
+                name=""
+                placeholder="(Optional) What text do you want at the top of the meme?"
+              />
+            </div>
+            <div class="d-flex justify-content-between mt-2">
+              <strong
+                ><i class="far fa-hand-point-down"></i
+                ><label for="bottomText">Text on Bottom</label></strong
+              >
+              <input
+                id="bottomText"
+                class="input pl-2 "
+                type="text"
+                name=""
+                placeholder="(Optional) What text do you want at the bottom of the meme?"
+              />
+            </div>
+          </div>
+          <div class="d-flex justify-content-end mt-3">
+            <button class="btn">Add Meme</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ============================ -->
+    <!--             Main             -->
+    <!-- ============================ -->
+
+    <main>
+      <div id="main" class="container">
+        <div id="row" class="row"></div>
+      </div>
+    </main>
+
+    <!-- ============================ -->
+    <!--          Javascript          -->
+    <!-- ============================ -->
+    <script src="app.js"></script>
+  </body>
+</html>
+
+<!-- ============================ -->
+<!--         temp / erase         -->
+<!-- ============================ -->
+
+<!-- <div class="col-sm">
+  <img
+    src="https://cdn.hiconsumption.com/wp-content/uploads/2015/06/Arches-National-Park-Utah-0.jpg"
+    alt=""
+    class="img-thumbnail"
+  />
+  <div class="top">TOP TEXT is now longer iiiiiiiiiiii</div>
+  <div class="bottom">
+    BOTTOM TEXT is now longer i i i i i i i i
+  </div>
+</div> -->

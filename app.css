@@ -1,0 +1,56 @@
+body {
+  font-family: "Roboto", sans-serif;
+  color: rgb(24, 24, 219);
+  background-color: rgba(187, 181, 183, 0.514);
+}
+
+input.input {
+  width: 85%;
+  border-radius: 0.25rem;
+  font-family: "Indie Flower", cursive;
+}
+
+.jumbotron {
+  padding: 2rem 2rem;
+  background-color: lightsteelblue;
+}
+
+i {
+  margin-right: 5px;
+}
+
+.btn {
+  color: #fff;
+  border-color: rgb(24, 24, 219);
+  background-color: rgb(24, 24, 219);
+}
+
+.img-thumbnail {
+  margin-bottom: 1.5rem;
+}
+
+.top {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  right: 40px;
+  margin: auto;
+  font-family: "Anton", sans-serif;
+  font-size: 40px;
+  color: #fff;
+  text-shadow: -5px -2px 4px #15034a, -5px -2px 4px #23057a,
+    -5px -2px 4px #15034a;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  /* left: 40px; */
+  margin-left: 40px;
+  font-family: "Anton", sans-serif;
+  font-size: 40px;
+  color: #fff;
+  text-shadow: -5px -2px 4px #15034a, -5px -2px 4px #23057a,
+    -5px -2px 4px #15034a;
+}
