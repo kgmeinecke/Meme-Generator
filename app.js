@@ -22,12 +22,6 @@ let topText = document.querySelector("#topText");
 let bottomText = document.querySelector("#bottomText");
 
 // ===========================
-//        Assignments
-// ===========================
-
-//rowDiv.id = currentRowID;
-
-// ===========================
 //         Listeners
 // ===========================
 
@@ -102,6 +96,17 @@ function createMeme() {
   bottomDiv.classList.add("bottom");
   // append bottomDiv to newDiv
   newDiv.append(bottomDiv);
+  // create hiddenDiv
+  let hiddenDiv = createDiv();
+  // create hiddenDiv string
+  let hiddenText = "Click to Remove Meme";
+  // append hiddenText to hiddenDiv
+  hiddenDiv.innerText = hiddenText;
+  // give hiddenDiv a class
+  hiddenDiv.classList.add("img-thumbnail");
+  hiddenDiv.classList.add("hidden");
+  //append hiddenDiv to newDiv
+  newDiv.append(hiddenDiv);
   //append newDiv to mainDiv
   row.append(newDiv);
 }
