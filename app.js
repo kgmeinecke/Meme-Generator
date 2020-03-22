@@ -41,32 +41,6 @@ for (let div of divs) {
   });
 }
 
-// for (let div of divs) {
-//   div.addEventListener("mouseover", function(e) {
-//     let newTarget = document.querySelectorAll("img");
-//     if (e.target.childElementCount === 0) {
-//       console.log("case 1");
-//       if (e.target.id === newTarget[0].id) {
-//         console.log("case 2");
-//         newTarget[0].nextSibling.nextSibling.nextSibling.classList.add(
-//           "display"
-//         );
-//         newTarget[0].nextSibling.nextSibling.nextSibling.classList.remove(
-//           "hidden"
-//         );
-//       } else if (e.target.id === newTarget[1].id) {
-//         console.log("case 3");
-//         newTarget[1].nextSibling.nextSibling.nextSibling.classList.add(
-//           "display"
-//         );
-//         newTarget[1].nextSibling.nextSibling.nextSibling.classList.remove(
-//           "hidden"
-//         );
-//       }
-//     }
-//   });
-// }
-
 for (let div of divs) {
   div.addEventListener("mouseout", function(e) {
     let targetDiv = document.querySelector(".display");
