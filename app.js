@@ -4,6 +4,7 @@
 
 let currentRowID = 1;
 let row = null;
+let idCount = 1;
 // ===========================
 //      Query Selectors
 // ===========================
@@ -26,24 +27,42 @@ let divs = document.querySelectorAll("#main");
 // ===========================
 //         Listeners
 // ===========================
+
 for (let div of divs) {
   div.addEventListener("mouseover", function(e) {
-    console.dir("in target 1 - " + e.target);
-    if (e.target.childElementCount !== 0) {
-      console.log("in target 2 - " + e.target);
-      e.target.children[3].classList.remove("hidden");
-      e.target.children[3].classList.add("display");
+    if (
+      e.target.childElementCount === 0 &&
+      e.target.childElementCount !== 4 &&
+      e.target.nextSibling !== null
+    ) {
+      e.target.nextSibling.nextSibling.nextSibling.classList.remove("hidden");
+      e.target.nextSibling.nextSibling.nextSibling.classList.add("display");
     }
   });
 }
 
 // for (let div of divs) {
 //   div.addEventListener("mouseover", function(e) {
-//     let targetImg = document.querySelector('.testing');
-//     if (e.target.childElementCount !== 0) {
-//       console.log("in target 2 - " + e.target);
-//       e.target.children[3].classList.remove("hidden");
-//       e.target.children[3].classList.add("display");
+//     let newTarget = document.querySelectorAll("img");
+//     if (e.target.childElementCount === 0) {
+//       console.log("case 1");
+//       if (e.target.id === newTarget[0].id) {
+//         console.log("case 2");
+//         newTarget[0].nextSibling.nextSibling.nextSibling.classList.add(
+//           "display"
+//         );
+//         newTarget[0].nextSibling.nextSibling.nextSibling.classList.remove(
+//           "hidden"
+//         );
+//       } else if (e.target.id === newTarget[1].id) {
+//         console.log("case 3");
+//         newTarget[1].nextSibling.nextSibling.nextSibling.classList.add(
+//           "display"
+//         );
+//         newTarget[1].nextSibling.nextSibling.nextSibling.classList.remove(
+//           "hidden"
+//         );
+//       }
 //     }
 //   });
 // }
@@ -56,8 +75,8 @@ for (let div of divs) {
       e.target.childElementCount === 0 &&
       targetDiv !== null
     ) {
-      targetDiv.classList.remove("display");
       targetDiv.classList.add("hidden");
+      targetDiv.classList.remove("display");
     }
   });
 }
@@ -67,10 +86,8 @@ for (let div of divs) {
   div.addEventListener("click", function(e) {
     if (e.target.parentElement.parentElement.childElementCount === 2) {
       e.target.parentElement.remove();
-      console.log("case 1");
     } else {
       e.target.parentElement.parentElement.remove();
-      console.log("case 2");
     }
   });
 }
@@ -90,13 +107,14 @@ addMemeForm.addEventListener("submit", function(e) {
   if (row.id === currentRowID.toString() && row.childElementCount < 2) {
     // create meme function call
     createMeme();
-
+    idCount++;
     // create new row and meme
   } else {
     currentRowID++;
     row = createRowDiv();
     mainDiv.append(row);
     createMeme();
+    idCount++;
   }
 
   //reset form
@@ -116,7 +134,7 @@ function createMeme() {
   let newImage = createImg();
   // giv img bootstrap class
   newImage.classList.add("img-thumbnail");
-  newImage.classList.add("testing");
+  newImage.id = idCount;
   // create url string
   let url = urlInput.value;
   // add url to src
